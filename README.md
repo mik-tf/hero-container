@@ -3,9 +3,10 @@
 
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
-- [Building the Image](#building-the-image)
-- [Running the Container](#running-the-container)
+- [Build the Image](#build-the-image)
+- [Run the Container](#run-the-container)
 - [Launch the Hero Website](#launch-the-hero-website)
+- [Publish a Website](#publish-a-website)
 
 ## Introduction
 
@@ -14,24 +15,36 @@ A Docker-based development environment for Hero development with essential tools
 
 - Docker installed on your system
 
-## Building the Image
+## Build the Image
 
-Build the image:
+- Build the image
+  ```bash
+  docker build -t hero-dev .
+  ```
 
-```bash
-docker build -t hero-dev .
-```
+## Run the Container
 
-## Running the Container
-
-Run the container with an interactive shell and local directory from the Hero Docusaurus repository.
-
-```bash
-docker run --network=host -v $(pwd):/workspace -it hero-dev
-```
+- Run the container with an interactive shell and local directory from the Hero Docusaurus repository.
+  ```
+  docker run --network=host \
+    -v $(pwd):/workspace \
+    -v ~/.ssh:/root/ssh \
+    -it hero-dev
+  ```
+- Copy the SSH keys
+  ```
+  cp -r /root/ssh /root/.ssh
+  ```
 
 ## Launch the Hero Website
 
 ```
-hero docusaurus -d && bash /root/hero/var/docusaurus/develop.sh
+hero docusaurus -d
+bash /root/hero/var/docusaurus/develop.sh
+```
+
+## Publish a Website
+
+```
+hero docusaurus -bpd -dk ~/.ssh/id_ed25519
 ```
