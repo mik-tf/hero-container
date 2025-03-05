@@ -8,7 +8,6 @@
 - [Run the Container](#run-the-container)
 - [Launch the Hero Website](#launch-the-hero-website)
 - [Publish a Website](#publish-a-website)
-  - [Specific SSH Key](#specific-ssh-key)
 
 ## Introduction
 
@@ -75,7 +74,6 @@ You can then view the website in your browser.
     ```bash
     hero docusaurus -bp
     ```
-### Specific SSH Key
 
 If you want to specify a different SSH key, use `-dk`:
 
