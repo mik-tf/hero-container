@@ -5,6 +5,7 @@
 - [Introduction](#introduction)
 - [Prerequisites](#prerequisites)
 - [Build the Image](#build-the-image)
+- [Pull the Image from Docker Hub](#pull-the-image-from-docker-hub)
 - [Run the Container](#run-the-container)
 - [Launch the Hero Website](#launch-the-hero-website)
 - [Publish a Website](#publish-a-website)
@@ -24,6 +25,10 @@ Build the Docker image:
 ```bash
 docker build -t heroc .
 ```
+
+## Pull the Image from Docker Hub
+
+If you don't want to build the image, you can pull it from Docker Hub. Simply use `logismosis/heroc` instead of `heroc` below.
 
 ## Run the Container
 
