@@ -1,7 +1,7 @@
 FROM ubuntu:24.04
 
 # Install system dependencies
-RUN apt update && apt install -y curl libatomic1 sudo autoconf libtool iputils-ping net-tools git rsync curl mc tmux libsqlite3-dev xz-utils git git-lfs redis-server ufw screen fswatch unzip
+RUN apt update && apt install -y curl libatomic1 sudo autoconf libtool iputils-ping net-tools git rsync curl mc tmux libsqlite3-dev xz-utils git git-lfs redis-server ufw screen fswatch unzip openssh-client
 
 # Install Bun
 RUN curl -fsSL https://bun.sh/install | bash
@@ -15,5 +15,8 @@ RUN chmod +x /usr/local/bin/hero
 
 WORKDIR /workspace
 
-# Start Redis and provide a bash shell
-ENTRYPOINT ["bash", "-c", "redis-server &> /var/log/redis.log & disown && exec bash"]
+# Copy startup script
+COPY start.sh /root/start.sh
+RUN chmod +x /root/start.sh
+
+ENTRYPOINT ["/root/start.sh"]
