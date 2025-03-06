@@ -68,7 +68,6 @@ To start a Hero Docusaurus website in development mode:
 - See the book on the local browser
   ```
   bash /root/hero/var/docusaurus/develop.sh
-
   ```
 
 You can then view the website in your browser at `https://localhost:3100`.
