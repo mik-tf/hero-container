@@ -45,7 +45,7 @@ By default, the container will:
 - Start Redis server in the background
 - Copy your SSH keys to the proper location
 - Initialize the SSH agent
-- Add your default SSH key (id_ed25519)
+- Add your default SSH key (`id_ed25519`)
 
 To use a different SSH key, specify it with the KEY environment variable (e.g. `KEY=id_ed25519`):
 
@@ -61,12 +61,17 @@ docker run --network=host \
 
 To start a Hero Docusaurus website in development mode:
 
-```bash
-hero docusaurus -d
-bash /root/hero/var/docusaurus/develop.sh
-```
+- Build the book then close the prompt with `Ctrl+C`
+  ```bash
+  hero docusaurus -d
+  ```
+- See the book on the local browser
+  ```
+  bash /root/hero/var/docusaurus/develop.sh
 
-You can then view the website in your browser.
+  ```
+
+You can then view the website in your browser at `https://localhost:3100`.
 
 ## Publish a Website
 
