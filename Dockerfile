@@ -10,7 +10,7 @@ RUN curl -fsSL https://bun.sh/install | bash
 ENV PATH="/root/.bun/bin:${PATH}"
 
 # Install Hero
-RUN curl -o /usr/local/bin/hero -L https://github.com/freeflowuniverse/herolib/releases/download/v1.0.26/hero-aarch64-unknown-linux-musl
+RUN curl -o /usr/local/bin/hero -L https://github.com/Incubaid/herolib/releases/download/v1.0.33/hero-aarch64-unknown-linux-musl
 RUN chmod +x /usr/local/bin/hero
 
 WORKDIR /workspace
