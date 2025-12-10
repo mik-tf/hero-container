@@ -63,11 +63,11 @@ To start a Hero Docusaurus website in development mode:
 
 - Build the book then close the prompt with `Ctrl+C`
   ```bash
-  hero docusaurus -d
+  hero docs -d
   ```
 - See the book on the local browser
   ```
-  bash /root/hero/var/docusaurus/develop.sh
+  bash /root/hero/var/docs/develop.sh
   ```
 
 You can then view the website in your browser at `https://localhost:3100`.
@@ -77,17 +77,17 @@ You can then view the website in your browser at `https://localhost:3100`.
 - To build and publish a Hero website:
   - Development
     ```bash
-    hero docusaurus -bpd
+    hero docs -bpd
     ```
   - Production
     ```bash
-    hero docusaurus -bp
+    hero docs -bp
     ```
 
 If you want to specify a different SSH key, use `-dk`:
 
 ```bash
-hero docusaurus -bpd -dk ~/.ssh/id_ed25519
+hero docs -bpd -dk ~/.ssh/id_ed25519
 ```
 
 > Note: The container handles the SSH agent and key management automatically on startup, so in most cases, you won't need to manually specify keys.
